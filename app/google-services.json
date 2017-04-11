@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "164791462558",
+    "firebase_url": "https://csapp-85418.firebaseio.com",
+    "project_id": "csapp-85418",
+    "storage_bucket": "csapp-85418.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164791462558:android:4cd15d4216822830",
+        "android_client_info": {
+          "package_name": "com.example.csapp.csapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164791462558-soic20g5v8v9kpqb3n96ufgtbk985ccv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb_AGd9H6GGjc7FM8KJKz5yKU7b5DyZQo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
