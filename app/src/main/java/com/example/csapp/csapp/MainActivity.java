@@ -1,6 +1,7 @@
 package com.example.csapp.csapp;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView textViewSignin;
 
     private ProgressDialog progressDialog;
-
     private FirebaseAuth firebaseAuth;
 
 
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                progressDialog.hide();
+                progressDialog.dismiss();
                 if(task.isComplete())
                 {
                     Toast.makeText(MainActivity.this,"Registered successfully", Toast.LENGTH_SHORT).show();
@@ -95,7 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(view==textViewSignin)
         {
-            //signin
+            finish();
+            startActivities(new Intent[]{new Intent(this, LoginActivity.class)});
         }
 
     }

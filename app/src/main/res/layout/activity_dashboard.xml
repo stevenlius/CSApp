@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.csapp.csapp.DashboardActivity">
+
+
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="405dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="19dp">
+
+    <TextView
+        android:text="Dashboard"
+        android:textSize="14pt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:text=""
+        android:textSize="9pt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textViewLogout"
+        android:text="Logout"
+        android:textSize="9pt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/buttonLiveChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Live Chat" />
+
+    <Button
+        android:id="@+id/buttonTimetable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Timetable" />
+
+    <Button
+        android:id="@+id/buttonNewsFeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="News feed" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
