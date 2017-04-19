@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(firebaseAuth.getCurrentUser()!= null)
         {
             finish();
-            startActivities(new Intent[]{new Intent(getApplicationContext(), DashboardActivity.class)});
+            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
         }
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
@@ -72,15 +72,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressDialog.dismiss();
-                if(task.isComplete())
-                {
-                    Toast.makeText(LoginActivity.this,"Login successfully", Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivities(new Intent[]{new Intent(getApplicationContext(), DashboardActivity.class)});
 
-                }else{
-                    Toast.makeText(LoginActivity.this,"Something is wrong!", Toast.LENGTH_SHORT).show();
-                }
+                finish();
+                Intent myIntent = new Intent(getApplicationContext(), DashboardActivity.class);
+                getApplicationContext().startActivity(myIntent);
+
             }
         });
     }
@@ -95,7 +91,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(v==textViewSignUp)
         {
             finish();
-            startActivities(new Intent[]{new Intent(this, MainActivity.class)});
+            this.startActivity(new Intent(this, MainActivity.class));
         }
     }
 

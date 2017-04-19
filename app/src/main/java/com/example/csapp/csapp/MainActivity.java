@@ -74,12 +74,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressDialog.dismiss();
-                if(task.isComplete())
-                {
-                    Toast.makeText(MainActivity.this,"Registered successfully", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(MainActivity.this,"Something is wrong!", Toast.LENGTH_SHORT).show();
-                }
             }
         });
     }
@@ -96,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(view==textViewSignin)
         {
             finish();
-            startActivities(new Intent[]{new Intent(this, LoginActivity.class)});
+            this.startActivity(new Intent(this, LoginActivity.class));
         }
 
     }

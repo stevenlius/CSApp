@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -16,7 +17,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
 
-
+    private Button buttonTimetable;
     private TextView textViewEmail;
     private TextView textViewLogout;
 
@@ -27,21 +28,14 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        if(firebaseAuth.getCurrentUser() != null)
-        {
-            finish();
-            startActivities(new Intent[]{new Intent(this, LoginActivity.class)});
-        }
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
+        buttonTimetable = (Button) findViewById(R.id.buttonTimetable);
 
         textViewEmail = (TextView) findViewById(R.id.textViewEmail);
-
-        textViewEmail.setText("Hello" + user.getEmail());
-
+        textViewEmail.setText("Hello， " + user.getEmail());
         textViewLogout = (TextView) findViewById(R.id.textViewLogout);
-
         textViewLogout.setOnClickListener(this);
     }
 
@@ -50,8 +44,18 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         if(v == textViewLogout)
         {
             firebaseAuth.signOut();
+
             finish();
-            startActivities(new Intent[]{new Intent(this, MainActivity.class)});
+            startActivity(new Intent(this, MainActivity.class));
         }
+
+
+        if(v== buttonTimetable)
+        {
+            finish();
+            startActivity(new Intent(this, TimetableActivity.class));
+        }
+
+
     }
 }
